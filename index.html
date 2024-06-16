@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HumorAluno</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>HumorAluno</h1>
+        <form id="moodForm">
+            <div class="form-group">
+                <label for="mood">Humor: <span id="moodValue">50</span></label>
+                <input type="range" id="mood" min="0" max="100" step="10" value="50" oninput="updateValue('mood')">
+            </div>
+            <div class="form-group">
+                <label for="confidence">Autoconfiança: <span id="confidenceValue">50</span></label>
+                <input type="range" id="confidence" min="0" max="100" step="10" value="50" oninput="updateValue('confidence')">
+            </div>
+            <div class="form-group">
+                <label for="nervousness">Nervosismo: <span id="nervousnessValue">50</span></label>
+                <input type="range" id="nervousness" min="0" max="100" step="10" value="50" oninput="updateValue('nervousness')">
+            </div>
+            <div class="form-group button-group">
+                <button type="button" onclick="saveData('before')">Salvar Antes</button>
+                <button type="button" onclick="saveData('after')">Salvar Depois</button>
+            </div>
+            <div class="form-group">
+                <button type="button" class="full-width" onclick="concludeLesson()">Concluir Aula</button>
+            </div>
+        </form>
+        <div class="charts">
+            <canvas id="moodChart"></canvas>
+            <canvas id="confidenceChart"></canvas>
+            <canvas id="nervousnessChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
